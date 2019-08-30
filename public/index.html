@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>RVAlocalEats</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">RVAlocalEats</h1>
+            <p class="lead">Life's too short...eat well!</p>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseRegister" role="button"
+                aria-expanded="false" aria-controls="collapseRegister">
+                Register
+            </a>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseFind" role="button" aria-expanded="false"
+                aria-controls="collapseFind">
+                Find
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Register a Restaurant</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseRegister" role="button"
+                        aria-expanded="false" aria-controls="collapseRegister">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div> -->
+    <div class="collapse" id="collapseRegister">
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Restaurant Name</label>
+                    <input type="email" class="form-control" id="inputName" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <!-- <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option> -->
+                        <option value="VA">Virginia</option>
+                        <!-- <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option> -->
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+
+            </div>
+
+            <!-- <button type="submit" class="btn btn-primary">Next</button> -->
+
+
+        </form>
+
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseDietary" role="button"
+                aria-expanded="false" aria-controls="collapseDietary">
+                Dietary Preference
+            </a>
+        </p>
+        <div class="collapse" id="collapseDietary">
+            <div class="card card-body" id="q1">
+                Carnivore
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>4</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>5</label>
+                </form>
+            </div>
+            <br>
+            <div class="card card-body" id="q1">
+                Pescatarian
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>4</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>5</label>
+                </form>
+            </div>
+            <br>
+            <div class="card card-body" id="q1">
+                Vegetarian
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>4</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>5</label>
+                </form>
+            </div>
+            <br>
+            <div class="card card-body" id="q1">
+                Vegan
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>4</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>5</label>
+                </form>
+            </div>
+            <br>
+            <div class="card card-body" id="q1">
+                Gluten Free
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>1</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>4</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>5</label>
+                </form>
+            </div>
+        </div>
+        <br>
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseWait" role="button" aria-expanded="false"
+                aria-controls="collapseWait">
+                Wait Time
+            </a>
+        </p>
+        <div class="collapse" id="collapseWait">
+            <div class="card card-body" id="q1">
+                How long is the wait?
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>No wait</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>5-10 minutes</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>10-20</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>20-30</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>ER Wait Times</label>
+                </form>
+            </div>
+        </div>
+        <br>
+
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseSpicy" role="button" aria-expanded="false"
+                aria-controls="collapseSpicy">
+                Spicy
+            </a>
+        </p>
+        <div class="collapse" id="collapseSpicy">
+            <div class="card card-body" id="q1">
+                How spicy is the food?
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>Not at all</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>A little spicy</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>Spicy</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="4">
+                            <label>More spicy</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="5">
+                            <label>Holy Cow Spicy!</label>
+                </form>
+            </div>
+        </div>
+        <br>
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseType" role="button" aria-expanded="false"
+                aria-controls="collapseType">
+                Type of Restaurant
+            </a>
+        </p>
+        <div class="collapse" id="collapseType">
+            <div class="card card-body" id="q1">
+                Type of restaurant
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>Casual</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>Business</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>Formal</label>
+                        </li>
+
+                </form>
+            </div>
+        </div>
+
+        <br>
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false"
+                aria-controls="collapsePrice">
+                Price Range
+            </a>
+        </p>
+        <div class="collapse" id="collapsePrice">
+            <div class="card card-body" id="q1">
+                Price Range
+                <br>
+                <form action="">
+                    <ul class='likert'>
+                        <li>
+                            <input type="radio" name="q1" value="1">
+                            <label>$</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="2">
+                            <label>$$</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="q1" value="3">
+                            <label>$$$</label>
+                        </li>
+
+                </form>
+            </div>
+
+        </div>
+        <!-- <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Find a Restaurant</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseFind" role="button"
+                    aria-expanded="false" aria-controls="collapseFind">
+                    Find
+                </a>
+            </div>
+        </div>
+    </div> -->
+        <div class="collapse" id="collapseFind">
+
+            <form>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <!-- <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option> -->
+                            <option value="VA">Virginia</option>
+                            <!-- <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option> -->
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Next</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
