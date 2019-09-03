@@ -11,7 +11,7 @@ body {
     margin: auto;
 }
 
-html,body {
+/* html,body {
     padding:10;
     margin:auto;
 }
@@ -22,6 +22,38 @@ body {
     align-items: center;
     box-sizing: border-box;
     margin: auto;
+} */
+
+.jumbotron {
+  background-image: url("../public/images/richmondsmall3.jpg");
+  height: 490px;
+  /*width: 100%; */
+  background-repeat: no-repeat;
+}
+
+/* .btn {
+    align-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 60%; */
+/* } */
+
+#left {
+  /* background-color: #67ab49; */
+  
+}
+
+.leftPadding {
+  padding: 10px;
+}
+
+#right {
+  /* background-color: red; */
+  
+}
+
+.rightPadding {
+  padding: 10px;
 }
 
 .wrap {
