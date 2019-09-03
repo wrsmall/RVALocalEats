@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "localRVAdb",
+    "password": "Tomiko101387",
+    "database": "restaurant_db",
     "host": "localhost",
     "dialect": "mysql"
   },
