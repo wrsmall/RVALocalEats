@@ -1,27 +1,26 @@
-var db = require("../models");
+var path = require("path");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Restaurant.findAll({}).then(function(dbRestaurant) {
-      res.render("index", {
-        msg: "Welcome!",
-        Restaurant: dbRestaurant
-      });
-    });
+  app.get("/", function (req, res) {
+    res.sendfile(path.join(__dirname, "../public/index.html"));
   });
+
 
   // Load example page and pass in an example by id
-  app.get("/restaurant/:id", function(req, res) {
-    db.Restaurant.findOne({ where: { id: req.params.id } }).then(function(dbRestaurant) {
-      res.render("restaurant", {
-        Restaurant: dbRestaurant
-      });
-    });
+  app.get("/survey/enter", function (req, res) {
+    res.sendfile(path.join(__dirname, "../public/register.html"));
   });
 
+
+
+  app.get("/survey/retrive", function (req, res) {
+    res.sendfile(path.join(__dirname, "../public/find.html"));
+  });
+
+
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
