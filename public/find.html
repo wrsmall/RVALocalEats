@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>RVAlocalEats</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <!-- <h1 class="display-4">RVAlocalEats</h1>
+            <p class="lead">Life's too short...eat well!</p> -->
+
+
+        </div>
+    </div>
+
+    <div class="container-fluid text-center">
+        <h1>Find a Restaurant</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-6 text-center" id="left">
+                <form>
+
+                    <div class="form-row d-flex justify-content-center">
+                        <div class="form-group col-md-5">
+                            <label for="inputCity"></label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="City">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="inputState"></label>
+                            <select id="inputState" class="form-control">
+                                <option selected>State...</option>
+                                <option value="VA">Virginia</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip"></label>
+                            <input type="text" class="form-control" id="inputZip" placeholder="Zip Code">
+                        </div>
+                    </div>
+                    <div class="form-row col-md-2">
+                            <a class="btn btn-danger" href="../public/index.html" role="button">
+                                Cancel
+                            </a>
+                        </div>
+                    <!-- <button type="submit" class="btn btn-primary">Next</button> -->
+                </form>
+
+            </div>
+            <div class="col-md-6 text-center" id="right">
+
+                <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#f-pills-dietary"
+                            role="tab" aria-controls="pills-home" aria-selected="true">Dietary Preference</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#f-pills-spicy" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">Spicy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#f-pills-time" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">Wait Time</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#f-pills-price" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">Price Range</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#f-pills-type" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">Type of
+                            Restaurant</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="f-pills-dietary" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+
+
+                        <div class="card card-body col-md-12" id="q1">
+                            Carnivore
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>1</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>2</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>3</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>4</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>5</label>
+                            </form>
+                        </div>
+                        <br>
+                        <div class="card card-body col-md-12" id="q1">
+                            Pescatarian
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>1</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>2</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>3</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>4</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>5</label>
+                            </form>
+                        </div>
+                        <br>
+                        <div class="card card-body col-md-12" id="q1">
+                            Vegetarian
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>1</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>2</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>3</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>4</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>5</label>
+                            </form>
+                        </div>
+                        <br>
+                        <div class="card card-body col-md-12" id="q1">
+                            Vegan
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>1</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>2</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>3</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>4</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>5</label>
+                            </form>
+                        </div>
+                        <br>
+                        <div class="card card-body col-md-12" id="q1">
+                            Gluten Free
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>1</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>2</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>3</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>4</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>5</label>
+                            </form>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="f-pills-spicy" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                        <div class="card card-body col-md-12" id="q1">
+                            How spicy is the food?
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>Not at all</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>A little spicy</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>Spicy</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>More spicy</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>Holy Cow Spicy!</label>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="f-pills-time" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                        <div class="card card-body col-md-12" id="q1">
+                            How long is the wait?
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>No wait</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>5-10 minutes</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>10-20</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="4">
+                                        <label>20-30</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="5">
+                                        <label>ER Wait Times</label>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="f-pills-price" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="card card-body col-md-12" id="q1">
+                            Price Range
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>$</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>$$</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>$$$</label>
+                                    </li>
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="f-pills-type" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                        <div class="card card-body col-md-12" id="q1">
+                            Type of restaurant
+                            <br>
+                            <form action="">
+                                <ul class='likert'>
+                                    <li>
+                                        <input type="radio" name="q1" value="1">
+                                        <label>Casual</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="2">
+                                        <label>Business</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="q1" value="3">
+                                        <label>Formal</label>
+                                    </li>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
