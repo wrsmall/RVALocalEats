@@ -18,9 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     glutenFree: DataTypes.INTEGER,
     type: DataTypes.STRING,
     price: DataTypes.STRING,
-    meal: DataTypes.STRING,
     wait: DataTypes.STRING,
-    bar: DataTypes.STRING,
     spice: DataTypes.INTEGER
   });
   return Restaurant;
