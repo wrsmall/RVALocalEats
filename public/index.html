@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src='./js/index.js'></script>
 
     <title>RVAlocalEats</title>
 </head>
@@ -104,7 +106,7 @@
                                     Carnivore
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert carnivore'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>1</label>
@@ -131,7 +133,7 @@
                                     Pescatarian
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert pescatarian'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>1</label>
@@ -158,7 +160,7 @@
                                     Vegetarian
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert vegetarian'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>1</label>
@@ -185,7 +187,7 @@
                                     Vegan
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert vegan'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>1</label>
@@ -212,7 +214,7 @@
                                     Gluten Free
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert gf'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>1</label>
@@ -244,7 +246,7 @@
                                     How spicy is the food?
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert spice'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>Not at all</label>
@@ -275,7 +277,7 @@
                                     How long is the wait?
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert wait'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>No wait</label>
@@ -306,7 +308,7 @@
                                     Price Range
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert price'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>$</label>
@@ -324,6 +326,8 @@
                                 </div>
                             </div>
 
+                            <button type='submit' id='rest_submit'>Submit</button>
+
 
                             <div class="tab-pane fade" id="pills-type" role="tabpanel"
                                 aria-labelledby="pills-contact-tab">
@@ -332,7 +336,7 @@
                                     Type of restaurant
                                     <br>
                                     <form action="">
-                                        <ul class='likert'>
+                                        <ul class='likert type'>
                                             <li>
                                                 <input type="radio" name="q1" value="1">
                                                 <label>Casual</label>
