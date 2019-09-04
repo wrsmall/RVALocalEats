@@ -6,11 +6,11 @@ module.exports = function(sequelize, DataTypes) {
   //});
   //return Example;
 
-  var Restaurant = sequelize.define("Restaurants", {
+  var Restaurant = sequelize.define("Restaurant", {
     name: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
-    address: DataTypes.String,
+    address: DataTypes.STRING,
     vegetarian: DataTypes.INTEGER,
     vegan: DataTypes.INTEGER,
     pescatarian: DataTypes.INTEGER,
@@ -18,9 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     glutenFree: DataTypes.INTEGER,
     type: DataTypes.STRING,
     price: DataTypes.STRING,
-    meal: DataTypes.STRING,
     wait: DataTypes.STRING,
-    bar: DataTypes.STRING,
     spice: DataTypes.INTEGER
   });
   return Restaurant;
