@@ -8,13 +8,13 @@ module.exports = function (app) {
 
 
   // Load example page and pass in an example by id
-  app.get("/survey/enter", function (req, res) {
+  app.get("/survey", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/register.html"));
   });
 
 
 
-  app.get("/survey/retrive", function (req, res) {
+  app.get("/survey", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/find.html"));
   });
 
