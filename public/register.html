@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src='./js/index.js'></script>
+
 
     <title>RVAlocalEats</title>
 </head>
@@ -68,9 +74,10 @@
 
                     </div>
                     <div class="form-row col-md-2">
-                        <a class="btn btn-danger" href="../public/index.html" role="button">
+                        <a class="btn btn-danger" href="/" role="button">
                             Cancel
                         </a>
+                        <button type="submit" id="rest_submit">Submit</button>
                     </div>
                 </form>
 
@@ -80,7 +87,7 @@
 
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-dietary"
+                        <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-dietary"
                             role="tab" aria-controls="pills-home" aria-selected="true">Dietary Preference</a>
                     </li>
                     <li class="nav-item">
@@ -109,26 +116,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             Carnivore
                             <br>
-                            <form action="">
+                            <form action="" id="carn">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="carnivore" value="1">
                                         <label>1</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="carnivore" value="2">
                                         <label>2</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="carnivore" value="3">
                                         <label>3</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="carnivore" value="4">
                                         <label>4</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="carnivore" value="5">
                                         <label>5</label>
                             </form>
                         </div>
@@ -136,26 +143,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             Pescatarian
                             <br>
-                            <form action="">
+                            <form action="" id="pesc">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="pescatarian" value="1">
                                         <label>1</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="pescatarian" value="2">
                                         <label>2</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="pescatarian" value="3">
                                         <label>3</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="pescatarian" value="4">
                                         <label>4</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="pescatarian" value="5">
                                         <label>5</label>
                             </form>
                         </div>
@@ -163,26 +170,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             Vegetarian
                             <br>
-                            <form action="">
+                            <form action="" id="vege">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="vegetarian" value="1">
                                         <label>1</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="vegetarian" value="2">
                                         <label>2</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="vegetarian" value="3">
                                         <label>3</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="vegetarian" value="4">
                                         <label>4</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="vegetarian" value="5">
                                         <label>5</label>
                             </form>
                         </div>
@@ -190,26 +197,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             Vegan
                             <br>
-                            <form action="">
+                            <form action="" id="veg">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="vegan" value="1">
                                         <label>1</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="vegan" value="2">
                                         <label>2</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="vegan" value="3">
                                         <label>3</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="vegan" value="4">
                                         <label>4</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="vegan" value="5">
                                         <label>5</label>
                             </form>
                         </div>
@@ -217,26 +224,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             Gluten Free
                             <br>
-                            <form action="">
+                            <form action="" id="gf">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="glutenFree" value="1">
                                         <label>1</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="glutenFree" value="2">
                                         <label>2</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="glutenFree" value="3">
                                         <label>3</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="glutenFree" value="4">
                                         <label>4</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="glutenFree" value="5">
                                         <label>5</label>
                             </form>
                         </div>
@@ -248,26 +255,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             How spicy is the food?
                             <br>
-                            <form action="">
+                            <form action="" id="spi">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="spice" value="1">
                                         <label>Not at all</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="spice" value="2">
                                         <label>A little spicy</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="spice" value="3">
                                         <label>Spicy</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="spice" value="4">
                                         <label>More spicy</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="spice" value="5">
                                         <label>Holy Cow Spicy!</label>
                             </form>
                         </div>
@@ -278,26 +285,26 @@
                         <div class="card card-body col-md-12" id="q1">
                             How long is the wait?
                             <br>
-                            <form action="">
+                            <form action="" id="waiting">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="wait" value="1">
                                         <label>No wait</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="wait" value="2">
                                         <label>5-10 minutes</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="wait" value="3">
                                         <label>10-20</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="4">
+                                        <input type="radio" name="wait" value="4">
                                         <label>20-30</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="5">
+                                        <input type="radio" name="wait" value="5">
                                         <label>ER Wait Times</label>
                             </form>
                         </div>
@@ -308,18 +315,18 @@
                         <div class="card card-body col-md-12" id="q1">
                             Price Range
                             <br>
-                            <form action="">
+                            <form action="" id="cost">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="price" value="1">
                                         <label>$</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="price" value="2">
                                         <label>$$</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="price" value="3">
                                         <label>$$$</label>
                                     </li>
 
@@ -333,18 +340,18 @@
                         <div class="card card-body col-md-12" id="q1">
                             Type of restaurant
                             <br>
-                            <form action="">
+                            <form action="" id="fan">
                                 <ul class='likert'>
                                     <li>
-                                        <input type="radio" name="q1" value="1">
+                                        <input type="radio" name="type" value="1">
                                         <label>Casual</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="2">
+                                        <input type="radio" name="type" value="2">
                                         <label>Business</label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="q1" value="3">
+                                        <input type="radio" name="type" value="3">
                                         <label>Formal</label>
                                     </li>
 
@@ -389,6 +396,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-</body>
+        <script src='./js/index.js'></script>
+    </body>
 
 </html>

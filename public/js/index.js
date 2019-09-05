@@ -1,30 +1,31 @@
+$(document).ready(function() {
 // Get references to page elements
 var $inputName = $("#inputName");
 var $inputAddress = $("#inputAddress");
 var $inputCity = $("#inputCity");
 var $inputZip = $("#inputZip");
-var $carnivore = $('.carnivore');
-var $pescatarian = $('.pescatarian');
-var $vegetarian = $('.vegetarian');
-var $vegan = $('.vegan');
-var $gf = $('.gf');
-var $spice = $('.spice');
-var $wait = $('.wait');
-var $price = $('.price');
-var $type = $('.type');
+var $carnivore = $("input[name='carnivore']:checked").val();
+var $pescatarian = $("input[name='pescatarian']:checked").val();
+var $vegetarian = $("input[name='vegetarian']:checked").val();
+var $vegan = $("input[name='vegan']:checked").val();
+var $gf = $("input[name='gultenFree']:checked").val();
+var $spice = $("input[name='spice']:checked").val();
+var $wait = $("input[name='wait']:checked").val();
+var $price = $("input[name='price']:checked").val();
+var $type = $("input[name='type']:checked").val();
 
-var $submitBtn = $('#rest_submit')
+var $submitBtn = $('#rest_submit');
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(Restaurant) {
+  saveExample: function(newRestaurant) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
       url: "/api/restaurants",
-      data: JSON.stringify(Restaurant)
+      data: JSON.stringify(newRestaurant)
     });
   // },
   // getExamples: function() {
@@ -73,25 +74,37 @@ var API = {
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
-  event.preventDefault();
+  var $inputName = $("#inputName");
+  var $inputAddress = $("#inputAddress");
+  var $inputCity = $("#inputCity");
+  var $inputZip = $("#inputZip");
+  var $carnivore = $("input[name='carnivore']:checked").val();
+  var $pescatarian = $("input[name='pescatarian']:checked").val();
+  var $vegetarian = $("input[name='vegetarian']:checked").val();
+  var $vegan = $("input[name='vegan']:checked").val();
+  var $gf = $("input[name='glutenFree']:checked").val();
+  var $spice = $("input[name='spice']:checked").val();
+  var $wait = $("input[name='wait']:checked").val();
+  var $price = $("input[name='price']:checked").val();
+  var $type = $("input[name='type']:checked").val();
   
   var newRestaurant = {
     name: $inputName.val().trim(),
     city: $inputAddress.val().trim(),
     state: $inputCity.val().trim(),
     address: $inputZip.val().trim(),
-    vegetarian: $vegetarian.val().trim(),
-    vegan: $vegan.val().trim(),
-    pescatarian: $pescatarian.val().trim(),
-    carnivore: $carnivore.val().trim(),
-    glutenFree: $gf.val().trim(),
-    type: $type.val().trim(),
-    price: $price.val().trim(),
-    wait: $wait.val().trim(),
-    spice: $spice.val().trim(),
+    vegetarian:$vegetarian,
+    vegan: $vegan,
+    pescatarian:$pescatarian,
+    carnivore:$carnivore,
+    glutenFree: $gf,
+    type:$type,
+    price:$price,
+    wait:$wait,
+    spice:$spice,
 
   };
-  console.log(newRestaurant);
+  console.log("This is:",newRestaurant);
   
 
   if (!(newRestaurant.name && newRestaurant.address)) {
@@ -104,11 +117,6 @@ var handleFormSubmit = function(event) {
     console.log('cat')
   });
 
-  
-    $inputName.val(""),
-    $inputAddress.val(""),
-    $inputCity.val(""),
-    $inputZip.val("")
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -124,5 +132,11 @@ var handleFormSubmit = function(event) {
 // };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+$submitBtn.on("click",() => {
+  event.preventDefault();
+  console.log("hit");
+
+  handleFormSubmit();
+})
 //$exampleList.on("click", ".delete", handleDeleteBtnClick);
+});
