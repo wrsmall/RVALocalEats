@@ -118,7 +118,9 @@ $(document).ready(function () {
   // };
 
   // Add event listeners to the submit and delete buttons
-  $submitBtn.on("click", () => {
+  console.log("onclick registered...")
+  $submitBtn.on("click", (event) => {
+    console.log(event);
     event.preventDefault();
     console.log("hit");
     handleFormSubmit();
