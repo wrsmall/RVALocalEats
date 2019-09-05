@@ -14,7 +14,7 @@ module.exports = function (app) {
 
 
 
-  app.get("/survey", function (req, res) {
+  app.get("/find", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/find.html"));
   });
 
