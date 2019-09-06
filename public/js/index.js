@@ -2,6 +2,8 @@ $(document).ready(function () {
 
   var $submitBtn = $('#rest_submit');
 
+  var $submitBtnTwo = $('#rest_submitTwo');
+
   // The API object contains methods for each kind of request we'll make
   var API = {
     saveExample: function (newRestaurant) {
@@ -13,13 +15,13 @@ $(document).ready(function () {
         url: "/api/restaurants",
         data: JSON.stringify(newRestaurant)
       });
-      // },
-      // getExamples: function() {
-      //   return $.ajax({
-      //     url: "api/examples",
-      //     type: "GET"
-      //   });
-      // },
+    },
+    getRestaurants: function (userPreference) {
+      return $.ajax({
+        url: `api/restaurants/${userPreference.vegetarian}/${userPreference.vegan}/${userPreference.carnivore}/${userPreference.pescatarian}/${userPreference.glutenFree}/${userPreference.spice}/${userPreference.wait}/${userPreference.type}/${userPreference.price}/`,
+        type: "GET"
+      });
+
       // deleteExample: function(id) {
       //   return $.ajax({
       //     url: "api/examples/" + id,
@@ -27,6 +29,51 @@ $(document).ready(function () {
       //   });
     }
   };
+
+  var findRestaurant = function (event) {
+    // var $inputName = $("#inputName2");
+    //var $inputAddress = $("#inputAddress2");
+    var $inputCity = $("#inputCity2");
+    var $inputZip = $("#inputZip2");
+    var $carnivore = $("input[name='carnivore2']:checked").val();
+    var $pescatarian = $("input[name='pescatarian2']:checked").val();
+    var $vegetarian = $("input[name='vegetarian2']:checked").val();
+    var $vegan = $("input[name='vegan2']:checked").val();
+    var $gf = $("input[name='glutenFree2']:checked").val();
+    var $spice = $("input[name='spice2']:checked").val();
+    var $wait = $("input[name='wait2']:checked").val();
+    var $price = $("input[name='price2']:checked").val();
+    var $type = $("input[name='type2']:checked").val();
+
+    var userPreference = {
+      //name: $inputName.val().trim(),
+      //city: $inputAddress.val().trim(),
+      state: $inputCity.val().trim(),
+      address: $inputZip.val().trim(),
+      vegetarian: $vegetarian,
+      vegan: $vegan,
+      pescatarian: $pescatarian,
+      carnivore: $carnivore,
+      glutenFree: $gf,
+      type: $type,
+      price: $price,
+      wait: $wait,
+      spice: $spice,
+
+    };
+
+    console.log(userPreference)
+
+    API.getRestaurants(userPreference).then(function () {
+     // console.log('cat');
+    })
+
+
+  };
+
+
+
+
 
   // refreshExamples gets new examples from the db and repopulates the list
   // var refreshExamples = function() {
@@ -76,9 +123,10 @@ $(document).ready(function () {
 
     var newRestaurant = {
       name: $inputName.val().trim(),
-      city: $inputAddress.val().trim(),
+      city:$inputCity.val().trim(),
       state: $inputCity.val().trim(),
-      address: $inputZip.val().trim(),
+      address:  $inputAddress.val().trim(),
+      zip: $inputZip.val().trim(),
       vegetarian: $vegetarian,
       vegan: $vegan,
       pescatarian: $pescatarian,
@@ -125,5 +173,48 @@ $(document).ready(function () {
     console.log("hit");
     handleFormSubmit();
   })
-  //$exampleList.on("click", ".delete", handleDeleteBtnClick);
+  console.log("onclick registered...")
+  $submitBtnTwo.on("click", (event) => {
+    console.log(event);
+    event.preventDefault();
+    console.log("hit");
+    findRestaurant();
+    //$exampleList.on("click", ".delete", handleDeleteBtnClick);
+  });
+
+
+
+
+
+
+
+
+
+
+
+  //app.post("/api/restaurants", function (req, res) {
+  // var newRestaurant = req.body;
+  // var match = 0;
+  // var minimumDifference = 1000;
+  // for (let i = 0; i < Restaurant.length; i++) {
+  //   var totalDifference = 0;
+  //   for (let x = 0; x < Restaurant[i].scores.length; x++) {
+  //     var difference = Math.abs(newRestaurant.scores[x] - Restaurant[i].scores[x])
+  //     totalDifference += difference;
+  //   }
+  //   if (totalDifference < minimumDifference) {
+  //     match = i;
+  //     minimumDifference = totalDifference;
+  //   }
+  // }
+  // Restaurant.push(newRestaurant);
+
+  // res.json(Restaurant[match]);
 });
+//}})
+
+
+
+
+
+
