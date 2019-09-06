@@ -11,24 +11,29 @@ body {
     margin: auto;
 }
 
-/* html,body {
-    padding:10;
-    margin:auto;
+
+.nav-link {
+  display: flex;
+  justify-content: flex-end; 
 }
 
-body {
-    width: 80%;
-    align-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    margin: auto;
-} */
+#btn-reg, #rest_submit, #rest_submitTwo {
+  display: flex;
+  justify-content: flex-end; 
+  margin: 5px;
+}
+
+#header {
+  /* background-color: #9db7da; */
+  padding: 20px;
+}
 
 .jumbotron {
-  background-image: url("../public/images/richmondsmall3.jpg");
+  background-image: url("/images/richmondsmall3.jpg");
   height: 490px;
   /*width: 100%; */
   background-repeat: no-repeat;
+  margin-bottom: 0rem;
 }
 
 /* .btn {
@@ -38,19 +43,13 @@ body {
     width: 60%; */
 /* } */
 
-#left {
-  /* background-color: #67ab49; */
-  
-}
+
 
 .leftPadding {
   padding: 10px;
 }
 
-#right {
-  /* background-color: red; */
-  
-}
+
 
 .rightPadding {
   padding: 10px;
