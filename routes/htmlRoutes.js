@@ -8,6 +8,10 @@ module.exports = function (app) {
 
 
   // Load example page and pass in an example by id
+  app.get("/about", function (req, res) {
+    res.sendfile(path.join(__dirname, "../public/about.html"));
+  });
+
   app.get("/survey", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/register.html"));
   });
@@ -16,6 +20,10 @@ module.exports = function (app) {
 
   app.get("/find", function (req, res) {
     res.sendfile(path.join(__dirname, "../public/find.html"));
+  });
+
+  app.get("/results", function (req, res) {
+    res.sendfile(path.join(__dirname, "../public/results.html"));
   });
 
 
