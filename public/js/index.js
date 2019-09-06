@@ -65,7 +65,7 @@ $(document).ready(function () {
     console.log(userPreference)
 
     API.getRestaurants(userPreference).then(function () {
-      console.log('cat');
+     // console.log('cat');
     })
 
 

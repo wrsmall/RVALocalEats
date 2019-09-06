@@ -6,7 +6,8 @@ module.exports = function (app) {
     db.Restaurant.findAll({
 
       attributes:
-        ['vegetarian',
+        ['name',
+          'vegetarian',
           'vegan',
           'pescatarian',
           'carnivore',
@@ -16,19 +17,19 @@ module.exports = function (app) {
           'wait',
           'spice']
     }).then(function (results) {
-      console.log(results);
+      //console.log(results);
 
       var db = results;
       var userPref = req.params;
-      console.log(userPref);
-      var best;
+      //console.log(userPref);
+      var bestMatch = 0;
       var total = 0;
+      var minDiff = 500;
       console.log("this is the vegan data");
-      console.log(db[0].dataValues.vegan);
+      //console.log(db[0].dataValues.vegan);
       console.log("this is the vegan user score");
-      console.log(parseInt(userPref.vegan));
+      //console.log(parseInt(userPref.vegan));
       for (let i = 0; i < db.length; i++) {
-        total = 0;
         total += (db[i].dataValues.vegetarian - parseInt(userPref.vegetarian));
         total += (db[i].dataValues.vegan - parseInt(userPref.vegan));
         total += (db[i].dataValues.carnivore - parseInt(userPref.carnivore));
@@ -38,12 +39,21 @@ module.exports = function (app) {
         total += (db[i].dataValues.price - parseInt(userPref.price));
         total += (db[i].dataValues.wait - parseInt(userPref.wait));
         total += (db[i].dataValues.type - parseInt(userPref.type));
-        console.log(total);
+        //console.log(total);
+
+
+        if (total < minDiff) {
+          bestMatch = i;
+          minDiff = total;
+        }
       }
+      //console.log(db[bestMatch]);
+      //res.json(db[bestMatch]);
+      
 
 
 
-      res.json(bestMAtch.length);
+      //res.json(bestMAtch.length);
     });
 
 
@@ -86,3 +96,5 @@ module.exports = function (app) {
     });
   });
 };
+
+
