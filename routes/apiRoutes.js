@@ -1,12 +1,54 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
-  app.get("/api/restaurants", function(req, res) {
-    db.Restaurant.findAll({}).then(function(results) {
-      res.json(results);
+  app.get("/api/restaurants/:vegetarian/:vegan/:carnivore/:pescatarian/:glutenFree/:spice/:wait/:type/:price/", function (req, res) {
+    db.Restaurant.findAll({
+
+      attributes:
+        ['vegetarian',
+          'vegan',
+          'pescatarian',
+          'carnivore',
+          'glutenFree',
+          'type',
+          'price',
+          'wait',
+          'spice']
+    }).then(function (results) {
+      console.log(results);
+
+      var db = results;
+      var userPref = req.params;
+      console.log(userPref);
+      var best;
+      var total = 0;
+      console.log("this is the vegan data");
+      console.log(db[0].dataValues.vegan);
+      console.log("this is the vegan user score");
+      console.log(parseInt(userPref.vegan));
+      for (let i = 0; i < db.length; i++) {
+        total = 0;
+        total += (db[i].dataValues.vegetarian - parseInt(userPref.vegetarian));
+        total += (db[i].dataValues.vegan - parseInt(userPref.vegan));
+        total += (db[i].dataValues.carnivore - parseInt(userPref.carnivore));
+        total += (db[i].dataValues.pescatarian - parseInt(userPref.pescatarian));
+        total += (db[i].dataValues.glutenFree - parseInt(userPref.glutenFree));
+        total += (db[i].dataValues.spice - parseInt(userPref.spice));
+        total += (db[i].dataValues.price - parseInt(userPref.price));
+        total += (db[i].dataValues.wait - parseInt(userPref.wait));
+        total += (db[i].dataValues.type - parseInt(userPref.type));
+        console.log(total);
+      }
+
+
+
+      res.json(bestMAtch.length);
     });
+
+
   });
+
 
   // Create a new example
   app.post("/api/restaurants", function (req, res) {
@@ -38,8 +80,8 @@ module.exports = function(app) {
 
 
   // Delete an example by id
-  app.delete("/api/restaurants/:id", function(req, res) {
-    db.Restaurant.destroy({ where: { id: req.params.id } }).then(function(results) {
+  app.delete("/api/restaurants/:id", function (req, res) {
+    db.Restaurant.destroy({ where: { id: req.params.id } }).then(function (results) {
       res.json(results);
     });
   });

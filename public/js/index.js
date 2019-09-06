@@ -16,9 +16,9 @@ $(document).ready(function () {
         data: JSON.stringify(newRestaurant)
       });
     },
-    getRestaurants: function () {
+    getRestaurants: function (userPreference) {
       return $.ajax({
-        url: "api/restaurants",
+        url: `api/restaurants/${userPreference.vegetarian}/${userPreference.vegan}/${userPreference.carnivore}/${userPreference.pescatarian}/${userPreference.glutenFree}/${userPreference.spice}/${userPreference.wait}/${userPreference.type}/${userPreference.price}/`,
         type: "GET"
       });
 
@@ -29,7 +29,6 @@ $(document).ready(function () {
       //   });
     }
   };
-
 
   var findRestaurant = function (event) {
     // var $inputName = $("#inputName2");
@@ -65,7 +64,7 @@ $(document).ready(function () {
 
     console.log(userPreference)
 
-    API.getRestaurants().then(function (data) {
+    API.getRestaurants(userPreference).then(function () {
       console.log('cat');
     })
 
