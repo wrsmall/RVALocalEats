@@ -22,9 +22,9 @@ module.exports = function (app) {
       var db = results;
       var userPref = req.params;
       //console.log(userPref);
-      var bestMatch = 0;
+      var bestMatch;
       var total = 0;
-      var minDiff = 500;
+      var allTotal=[];
       console.log("this is the vegan data");
       //console.log(db[0].dataValues.vegan);
       console.log("this is the vegan user score");
@@ -40,13 +40,21 @@ module.exports = function (app) {
         total += (db[i].dataValues.wait - parseInt(userPref.wait));
         total += (db[i].dataValues.type - parseInt(userPref.type));
         //console.log(total);
+       db[i].val= parseInt(total);
+       allTotal.push(parseInt(total));
+       console.log(`all totals: ${allTotal}`);
+      }
 
-
-        if (total < minDiff) {
-          bestMatch = i;
-          minDiff = total;
+      var best=Math.min(...allTotal);
+      console.log(best);
+      console.log(db);
+      var multi=[];
+      for (let j=0;j<db.length;j++){
+        if (best===db[j].val){
+        multi.push(db[j].dataValues.name);
         }
       }
+      console.log(`These values are ${multi}`);
       //console.log(db[bestMatch]);
       //res.json(db[bestMatch]);
       
