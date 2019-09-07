@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": ""
+    "password": "Imthebest@30",
     "database": "restaurant_db",
     "host": "localhost",
     "dialect": "mysql"
