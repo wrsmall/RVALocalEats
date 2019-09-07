@@ -3,13 +3,13 @@ $(document).ready(function () {
   var $submitBtn = $('#rest_submit');
 
   var $submitBtnTwo = $('#rest_submitTwo');
-  
-  var locstres= sessionStorage.getItem("rest");
-  var add= sessionStorage.getItem("add");
+
+  var locstres = sessionStorage.getItem("rest");
+  var add = sessionStorage.getItem("add");
 
   $("#resultName").html(locstres);
   $("#resultAddress").html(add);
-
+  sessionStorage.clear();
   // The API object contains methods for each kind of request we'll make
   var API = {
     saveExample: function (newRestaurant) {
@@ -75,16 +75,16 @@ $(document).ready(function () {
       sessionStorage.setItem("rest", res.resMatch);
       sessionStorage.setItem("add", res.resAddress);
       newWin();
-      
+
     })
 
 
   };
 
 
-function newWin(){
-  window.location="/results";
-};
+  function newWin() {
+    window.location = "/results";
+  };
 
 
   // refreshExamples gets new examples from the db and repopulates the list
@@ -135,9 +135,9 @@ function newWin(){
 
     var newRestaurant = {
       name: $inputName.val().trim(),
-      city:$inputCity.val().trim(),
+      city: $inputCity.val().trim(),
       state: $inputCity.val().trim(),
-      address:  $inputAddress.val().trim(),
+      address: $inputAddress.val().trim(),
       zip: $inputZip.val().trim(),
       vegetarian: $vegetarian,
       vegan: $vegan,
