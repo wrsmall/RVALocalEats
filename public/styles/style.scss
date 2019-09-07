@@ -1,0 +1,57 @@
+@mixin flex-end {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+
+html,body {
+    padding:10;
+    margin:auto;
+}
+
+body {
+    width: 80%;
+    align-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+
+.nav-link {
+  @include flex-end ();
+}
+
+#btn-reg, #rest_submit, #rest_submitTwo {
+    @include flex-end ();
+  margin: 5px;
+}
+
+#header {
+  padding: 20px;
+}
+
+.jumbotron {
+  background-image: url("/images/richmondsmall3.jpg");
+  height: 490px;
+  background-repeat: no-repeat;
+  margin-bottom: 0rem;
+}
+
+
+.leftPadding, .rightPadding {
+  padding: 10px;
+}
+
+
+.wrap {
+  font:12px Arial, san-serif;
+}
+
+h1.likert-header {
+  padding-left:4.25%;
+  margin:20px 0 0;
+}
+
+@import  "./form";
+

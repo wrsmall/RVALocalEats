@@ -1,7 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Imthebest@30",
+
+    "password": ""
     "database": "restaurant_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -15,7 +16,14 @@
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+      "use_env_variable": "JAWSDB_URL",
+      "username": "dtrnfkosgrtqdn2l",
+      "password": "ycxhm7ttfik8hf8b",
+      "database": "zp884dcf1zx7empw",
+      "host": "a07yd3a6okcidwap.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql",
+      "port": 3306
+      
+    
   }
 }
