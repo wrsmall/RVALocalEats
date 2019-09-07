@@ -24,7 +24,7 @@ module.exports = function (app) {
       console.log(userPref);
       //console.log(userPref);
       var bestMatch;
-      var total = Math.abs(0);
+      var total = 0;
       var allTotal=[];
       console.log("this is the vegan data");
       //console.log(db[0].dataValues.vegan);
@@ -43,6 +43,7 @@ module.exports = function (app) {
         //console.log(total);
        db[i].val=parseInt(total);
        allTotal.push(parseInt(total));
+       total=0;
        console.log(`all totals: ${allTotal}`);
       }
 
