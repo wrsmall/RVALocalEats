@@ -7,6 +7,7 @@ module.exports = function (app) {
 
       attributes:
         ['name',
+        'address',
           'vegetarian',
           'vegan',
           'pescatarian',
@@ -18,29 +19,29 @@ module.exports = function (app) {
           'spice']
     }).then(function (results) {
       //console.log(results);
-
       var db = results;
       var userPref = req.params;
+      console.log(userPref);
       //console.log(userPref);
       var bestMatch;
-      var total = 0;
+      var total = Math.abs(0);
       var allTotal=[];
       console.log("this is the vegan data");
       //console.log(db[0].dataValues.vegan);
       console.log("this is the vegan user score");
       //console.log(parseInt(userPref.vegan));
       for (let i = 0; i < db.length; i++) {
-        total += (db[i].dataValues.vegetarian - parseInt(userPref.vegetarian));
-        total += (db[i].dataValues.vegan - parseInt(userPref.vegan));
-        total += (db[i].dataValues.carnivore - parseInt(userPref.carnivore));
-        total += (db[i].dataValues.pescatarian - parseInt(userPref.pescatarian));
-        total += (db[i].dataValues.glutenFree - parseInt(userPref.glutenFree));
-        total += (db[i].dataValues.spice - parseInt(userPref.spice));
-        total += (db[i].dataValues.price - parseInt(userPref.price));
-        total += (db[i].dataValues.wait - parseInt(userPref.wait));
-        total += (db[i].dataValues.type - parseInt(userPref.type));
+        total += Math.abs((db[i].dataValues.vegetarian - parseInt(userPref.vegetarian)));
+        total += Math.abs((db[i].dataValues.vegan - parseInt(userPref.vegan)));
+        total += Math.abs((db[i].dataValues.carnivore - parseInt(userPref.carnivore)));
+        total += Math.abs((db[i].dataValues.pescatarian - parseInt(userPref.pescatarian)));
+        total += Math.abs((db[i].dataValues.glutenFree - parseInt(userPref.glutenFree)));
+        total += Math.abs((db[i].dataValues.spice - parseInt(userPref.spice)));
+        total += Math.abs((db[i].dataValues.price - parseInt(userPref.price)));
+        total += Math.abs((db[i].dataValues.wait - parseInt(userPref.wait)));
+        total += (Math.abs(db[i].dataValues.type - parseInt(userPref.type)));
         //console.log(total);
-       db[i].val= parseInt(total);
+       db[i].val=parseInt(total);
        allTotal.push(parseInt(total));
        console.log(`all totals: ${allTotal}`);
       }
@@ -51,7 +52,8 @@ module.exports = function (app) {
       var multi=[];
       for (let j=0;j<db.length;j++){
         if (best===db[j].val){
-        multi.push(db[j].dataValues.name);
+        var resMatch=(db[j].dataValues.name);
+        var resAddress=(db[j].dataValues.address);
         }
       }
       console.log(`These values are ${multi}`);
@@ -61,7 +63,7 @@ module.exports = function (app) {
 
 
 
-      //res.json(bestMAtch.length);
+      res.json({resMatch: resMatch, resAddress: resAddress});
     });
 
 

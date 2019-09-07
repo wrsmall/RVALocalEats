@@ -3,6 +3,12 @@ $(document).ready(function () {
   var $submitBtn = $('#rest_submit');
 
   var $submitBtnTwo = $('#rest_submitTwo');
+  
+  var locstres= localStorage.getItem("rest");
+  var add= localStorage.getItem("add");
+
+  $("#resultName").html(locstres);
+  $("#resultAddress").html(add);
 
   // The API object contains methods for each kind of request we'll make
   var API = {
@@ -48,8 +54,8 @@ $(document).ready(function () {
     var userPreference = {
       //name: $inputName.val().trim(),
       //city: $inputAddress.val().trim(),
-      state: $inputCity.val().trim(),
-      address: $inputZip.val().trim(),
+      //state: $inputCity.val().trim(),
+      //address: $inputZip.val().trim(),
       vegetarian: $vegetarian,
       vegan: $vegan,
       pescatarian: $pescatarian,
@@ -64,15 +70,21 @@ $(document).ready(function () {
 
     console.log(userPreference)
 
-    API.getRestaurants(userPreference).then(function () {
-     // console.log('cat');
+    API.getRestaurants(userPreference).then(function (res) {
+      console.log(res);
+      localStorage.setItem("rest", res.resMatch);
+      localStorage.setItem("add", res.resAddress);
+      newWin();
+      
     })
 
 
   };
 
 
-
+function newWin(){
+  window.location="/results";
+};
 
 
   // refreshExamples gets new examples from the db and repopulates the list
