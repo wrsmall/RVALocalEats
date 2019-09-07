@@ -4,8 +4,8 @@ $(document).ready(function () {
 
   var $submitBtnTwo = $('#rest_submitTwo');
   
-  var locstres= localStorage.getItem("rest");
-  var add= localStorage.getItem("add");
+  var locstres= sessionStorage.getItem("rest");
+  var add= sessionStorage.getItem("add");
 
   $("#resultName").html(locstres);
   $("#resultAddress").html(add);
@@ -72,8 +72,8 @@ $(document).ready(function () {
 
     API.getRestaurants(userPreference).then(function (res) {
       console.log(res);
-      localStorage.setItem("rest", res.resMatch);
-      localStorage.setItem("add", res.resAddress);
+      sessionStorage.setItem("rest", res.resMatch);
+      sessionStorage.setItem("add", res.resAddress);
       newWin();
       
     })
